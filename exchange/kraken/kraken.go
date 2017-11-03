@@ -25,6 +25,6 @@ func NewKrakenExchange(config config.KrakenExchange, logger *logrus.Logger) (*kr
 	}, nil
 }
 
-func (ke *krakenExchange) LatestPrice(ticker string) float32 {
+func (ke *krakenExchange) LatestPrice(ticker string) float64 {
 	return 123
 }

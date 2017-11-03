@@ -7,9 +7,22 @@ import (
 
 type Config struct {
 	Kraken KrakenExchange `toml:"kraken,omitempty"`
+	Bitstamp BitstampExchange `toml:"bitstamp,omitempty"`
+	Bitfinex BitfinexExchange `toml:"bitfinex,omitempty"`
 }
 
 type KrakenExchange struct {
+	APIKey string `toml:"api_key"`
+	APISecret string `toml:"api_secret"`
+}
+
+type BitstampExchange struct {
+	ClientId string `toml:"client_id"`
+	APIKey string `toml:"api_key"`
+	APISecret string `toml:"api_secret"`
+}
+
+type BitfinexExchange struct {
 	APIKey string `toml:"api_key"`
 	APISecret string `toml:"api_secret"`
 }

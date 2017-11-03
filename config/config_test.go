@@ -25,7 +25,7 @@ api_secret = "test_secret"
 }
 
 func TestLoadFile(t *testing.T) {
-	conf, err := LoadFile("testdata/kraken_config.toml")
+	conf, err := LoadFile("testdata/example_config.toml")
 	if err != nil {
 		t.Error(err)
 	}

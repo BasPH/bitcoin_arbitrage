@@ -1,0 +1,12 @@
+[kraken]
+api_key = "test_key"
+api_secret = "test_secret"
+
+[bitstamp]
+client_id = "123456"
+api_key = "test_key"
+api_secret = "test_secret"
+
+[bitfinex]
+api_key = "test_key"
+api_secret = "test_secret"

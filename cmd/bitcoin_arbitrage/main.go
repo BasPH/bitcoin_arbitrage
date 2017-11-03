@@ -19,7 +19,7 @@ func init() {
 	log = logrus.New()
 	log.Formatter = logrus.Formatter(&logrus.JSONFormatter{})
 	log.Out = os.Stdout
-	log.Level = logrus.InfoLevel
+	log.Level = logrus.DebugLevel
 }
 
 func main() {
@@ -33,10 +33,7 @@ func main() {
 	em := exchange.NewExchangeManager(c, log)
 	log.Infof("Num exchanges connected: %d", len(em.Exchanges))
 
-	//ticker, err := api.Ticker(krakenapi.XXBTZEUR)
-	//if err != nil {
-	//	log.Fatal(err)
-	//}
-
-	//fmt.Println(ticker.XXBTZEUR.OpeningPrice)
+	for _, e := range em.Exchanges {
+		log.Debug(e.LatestPrice("btceur"))
+	}
 }
