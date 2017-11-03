@@ -3,9 +3,27 @@
 
 [[projects]]
   branch = "master"
+  name = "github.com/alecthomas/template"
+  packages = [".","parse"]
+  revision = "a0175ee3bccc567396460bf5acd36800cb10c49c"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/alecthomas/units"
+  packages = ["."]
+  revision = "2efee857e7cfd4f3d0138cc3cbb1b4966962b93a"
+
+[[projects]]
+  branch = "master"
   name = "github.com/beldur/kraken-go-api-client"
   packages = ["."]
   revision = "399ef4245ca292ecad5389e4f2519cdbd02ce2a4"
+
+[[projects]]
+  name = "github.com/pelletier/go-toml"
+  packages = ["."]
+  revision = "16398bac157da96aa88f98a2df640c7f32af1da2"
+  version = "v1.0.1"
 
 [[projects]]
   name = "github.com/sirupsen/logrus"
@@ -25,9 +43,15 @@
   packages = ["unix","windows"]
   revision = "46eaec7899b1dd945c25db17c78ba3f0c58a6613"
 
+[[projects]]
+  name = "gopkg.in/alecthomas/kingpin.v2"
+  packages = ["."]
+  revision = "1087e65c9441605df944fb12c33f0fe7072d18ca"
+  version = "v2.2.5"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "e5f840fd31f658eab0e18b6584b44c08d3d9b0c70ad3e009bff7eeb878fc2fc9"
+  inputs-digest = "8675864cd872d4be9c984394d6dd49851c87b3a7b7c553753657385a1aa12e52"
   solver-name = "gps-cdcl"
   solver-version = 1
