@@ -1,12 +1,22 @@
-[kraken]
+[[exchange]]
+name = "kraken"
 api_key = "test_key"
 api_secret = "test_secret"
+scrape_interval = 5
 
-[bitstamp]
+[[exchange]]
+name = "bitstamp"
 client_id = "123456"
 api_key = "test_key"
 api_secret = "test_secret"
+scrape_interval = 5
 
-[bitfinex]
+[[exchange]]
+name = "bitfinex"
 api_key = "test_key"
 api_secret = "test_secret"
+scrape_interval = 5
+
+[limits]
+eur = 10.0
+btc = 0.1

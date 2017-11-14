@@ -6,25 +6,19 @@ import (
 )
 
 type Config struct {
-	Kraken KrakenExchange `toml:"kraken,omitempty"`
-	Bitstamp BitstampExchange `toml:"bitstamp,omitempty"`
-	Bitfinex BitfinexExchange `toml:"bitfinex,omitempty"`
+	Exchanges []Exchange `toml:"exchange"`
+	Limits struct {
+		Eur float64 `toml:"eur,omitempty"`
+		Btc float64 `toml:"btc,omitempty"`
+	} `toml:"limits,omitempty"`
 }
 
-type KrakenExchange struct {
-	APIKey string `toml:"api_key"`
-	APISecret string `toml:"api_secret"`
-}
-
-type BitstampExchange struct {
-	ClientId string `toml:"client_id"`
-	APIKey string `toml:"api_key"`
-	APISecret string `toml:"api_secret"`
-}
-
-type BitfinexExchange struct {
-	APIKey string `toml:"api_key"`
-	APISecret string `toml:"api_secret"`
+type Exchange struct {
+	Name           string `toml:"name"`
+	APIKey         string `toml:"api_key"`
+	APISecret      string `toml:"api_secret"`
+	ScrapeInterval int    `toml:"scrape_interval,omitempty"`
+	ClientID       string `toml:"client_id,omitempty"`
 }
 
 func Load(b []byte) (*Config, error) {

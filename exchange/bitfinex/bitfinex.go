@@ -4,31 +4,31 @@ import (
 	"github.com/bitfinexcom/bitfinex-api-go/v1"
 	"github.com/BasPH/bitcoin_arbitrage/config"
 	"github.com/sirupsen/logrus"
-	"strconv"
+	"time"
 )
+
+const name = "Bitfinex"
 
 type bitfinexExchange struct {
 	client *bitfinex.Client
-	log *logrus.Logger
+	log    *logrus.Logger
+	delay  time.Duration
 }
 
-func NewBitfinexExchange(config config.BitfinexExchange, logger *logrus.Logger) (*bitfinexExchange, error) {
-	client := bitfinex.NewClient().Auth(config.APIKey, config.APISecret)
+func (bf *bitfinexExchange) Name() string {
+	return name
+}
+
+func (bf *bitfinexExchange) Delay() time.Duration {
+	return bf.delay
+}
+
+func New(c config.Exchange, logger *logrus.Logger) *bitfinexExchange {
+	logger.Infof("Initializing %v", name)
+	client := bitfinex.NewClient().Auth(c.APIKey, c.APISecret)
 	return &bitfinexExchange{
 		client: client,
-		log: logger,
-	}, nil
-}
-
-func (bf *bitfinexExchange) LatestPrice(ticker string) float64 {
-	tick, err := bf.client.Ticker.Get("btcusd")
-	if err != nil {
-		bf.log.Error(err)
+		log:    logger,
+		delay:  time.Duration(time.Second * time.Duration(c.ScrapeInterval)),
 	}
-
-	latest, err := strconv.ParseFloat(tick.LastPrice, 32)
-	if err != nil {
-		bf.log.Error(err)
-	}
-	return latest
 }

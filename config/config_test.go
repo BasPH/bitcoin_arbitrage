@@ -6,9 +6,11 @@ import (
 
 func TestLoad(t *testing.T) {
 	test := []byte(`
-[kraken]
+[[exchange]]
+name = "kraken"
 api_key = "test_key"
 api_secret = "test_secret"
+scrape_interval = 5
 `)
 
 	conf, err := Load(test)
@@ -16,11 +18,12 @@ api_secret = "test_secret"
 		t.Error(err)
 	}
 
-	if conf.Kraken.APIKey != "test_key" {
-		t.Error("Kraken API key not parsed correctly.")
+	if len(conf.Exchanges) != 1 {
+		t.Error("Number of exchanges is not 1")
 	}
-	if conf.Kraken.APISecret != "test_secret" {
-		t.Error("Kraken API secret not parsed correctly.")
+
+	if conf.Exchanges[0].Name != "kraken" {
+		t.Error("Expected name \"kraken\"")
 	}
 }
 
@@ -30,10 +33,11 @@ func TestLoadFile(t *testing.T) {
 		t.Error(err)
 	}
 
-	if conf.Kraken.APIKey != "test_key" {
-		t.Error("Kraken API key not parsed correctly.")
+	if len(conf.Exchanges) != 3 {
+		t.Error("Number of exchanges is not 3")
 	}
-	if conf.Kraken.APISecret != "test_secret" {
-		t.Error("Kraken API secret not parsed correctly.")
+
+	if conf.Exchanges[0].Name != "kraken" {
+		t.Error("Expected name \"kraken\"")
 	}
 }
