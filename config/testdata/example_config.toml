@@ -20,3 +20,4 @@ scrape_interval = 5
 [limits]
 eur = 10.0
 btc = 0.1
+pct_threshold = 1
