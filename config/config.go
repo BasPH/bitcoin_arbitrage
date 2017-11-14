@@ -7,7 +7,7 @@ import (
 
 type Config struct {
 	Exchanges []Exchange `toml:"exchange"`
-	Limits struct {
+	Limits    struct {
 		Eur float64 `toml:"eur,omitempty"`
 		Btc float64 `toml:"btc,omitempty"`
 	} `toml:"limits,omitempty"`

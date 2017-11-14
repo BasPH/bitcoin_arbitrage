@@ -1,12 +1,12 @@
 package exchange
 
 import (
-	"github.com/sirupsen/logrus"
 	"github.com/BasPH/bitcoin_arbitrage/config"
-	"github.com/BasPH/bitcoin_arbitrage/exchange/kraken"
-	"time"
-	"github.com/BasPH/bitcoin_arbitrage/exchange/bitstamp"
 	"github.com/BasPH/bitcoin_arbitrage/exchange/bitfinex"
+	"github.com/BasPH/bitcoin_arbitrage/exchange/bitstamp"
+	"github.com/BasPH/bitcoin_arbitrage/exchange/kraken"
+	"github.com/sirupsen/logrus"
+	"time"
 )
 
 type Exchange interface {

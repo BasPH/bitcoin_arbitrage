@@ -1,10 +1,10 @@
 package main
 
 import (
-	"github.com/sirupsen/logrus"
-	"gopkg.in/alecthomas/kingpin.v2"
 	"github.com/BasPH/bitcoin_arbitrage/config"
 	"github.com/BasPH/bitcoin_arbitrage/engine"
+	"github.com/sirupsen/logrus"
+	"gopkg.in/alecthomas/kingpin.v2"
 	"os"
 )
 

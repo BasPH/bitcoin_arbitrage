@@ -1,12 +1,21 @@
-.PHONY: all test fmt build
+SHELL := /bin/bash
+SRC = $(shell find . -type f -name '*.go' -not -path "./vendor/*")
 
-all: test fmt build
+.PHONY: all test fmt build vet lint
+
+all: test fmt vet lint build
 
 test:
 	@echo do something
 
 fmt:
-	@echo do something
+	@gofmt -s -l -w $(SRC)
 
 build:
+	@echo do something
+
+vet:
+	@echo do something
+
+lint:
 	@echo do something

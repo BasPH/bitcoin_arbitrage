@@ -1,8 +1,8 @@
 package kraken
 
 import (
-	"github.com/beldur/kraken-go-api-client"
 	"github.com/BasPH/bitcoin_arbitrage/config"
+	"github.com/beldur/kraken-go-api-client"
 	"github.com/sirupsen/logrus"
 	"time"
 )

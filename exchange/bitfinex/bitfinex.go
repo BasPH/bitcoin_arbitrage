@@ -1,8 +1,8 @@
 package bitfinex
 
 import (
-	"github.com/bitfinexcom/bitfinex-api-go/v1"
 	"github.com/BasPH/bitcoin_arbitrage/config"
+	"github.com/bitfinexcom/bitfinex-api-go/v1"
 	"github.com/sirupsen/logrus"
 	"time"
 )
