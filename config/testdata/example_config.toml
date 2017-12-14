@@ -17,6 +17,12 @@ api_key = "test_key"
 api_secret = "test_secret"
 scrape_interval = 5
 
+[[exchange]]
+name = "coinbase"
+api_key = "test_key"
+api_secret = "test_secret"
+scrape_interval = 5
+
 [limits]
 eur = 10.0
 btc = 0.1

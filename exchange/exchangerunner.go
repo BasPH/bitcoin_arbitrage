@@ -7,6 +7,7 @@ import (
 	"github.com/BasPH/bitcoin_arbitrage/exchange/kraken"
 	"github.com/sirupsen/logrus"
 	"time"
+	"github.com/BasPH/bitcoin_arbitrage/exchange/coinbase"
 )
 
 type Exchange interface {
@@ -30,6 +31,8 @@ func NewExchangeRunner(c config.Exchange, logger *logrus.Logger) *ExchangeRunner
 		e = bitstamp.New(c, logger)
 	case "bitfinex":
 		e = bitfinex.New(c, logger)
+	case "coinbase":
+		e = coinbase.New(c, logger)
 	default:
 		return nil
 	}

@@ -33,8 +33,8 @@ func TestLoadFile(t *testing.T) {
 		t.Error(err)
 	}
 
-	if len(conf.Exchanges) != 3 {
-		t.Error("Number of exchanges is not 3")
+	if len(conf.Exchanges) != 4 {
+		t.Errorf("Number of exchanges is not 4, counted %v", len(conf.Exchanges))
 	}
 
 	if conf.Exchanges[0].Name != "kraken" {
