@@ -19,6 +19,6 @@ A more precise calculation for the example above:
 ## Usage
 The engine can run in 3 modes:
 
-1. **Dry mode** Connect to the exchanges and use your own account data, but not performing transactions.
-2. **Demo mode** An extension of the dry mode. Your balances from the exchanges are *not* used, instead the engine is started with fixed balances so you don't need anything on the exchanges to run the engine.
+1. **Dry mode** Connect to the exchanges and use your own account data, but only logging and not performing transactions.
+2. **Demo mode** An extension of the dry mode. The engine is started with fixed balances so you don't need anything on the exchanges to run the engine.
 3. **Production mode**
